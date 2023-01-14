@@ -1,0 +1,14 @@
+version: '3'
+services:
+  # バックエンド(Fdocker astAPI)
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5000
+    volumes:
+      - ./back/app:/app/
+    tty: true
+    restart: on-failure
+    working_dir: /app
