@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    build: 
+      context: ../
+      dockerfile: ./.devcontainer/Dockerfile.dev
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - ../:/workspaces/fastAPI-veutify-template/
+    tty: true

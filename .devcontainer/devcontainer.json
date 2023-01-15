@@ -1,0 +1,15 @@
+{
+	"name": "Ubuntu",
+	"dockerComposeFile": "docker-compose.devcontainer.yml",
+	"workspaceFolder": "/workspaces/fastAPI-veutify-template/",
+	"service": "app",
+	// 拡張機能
+	"extensions": [
+		"ms-python.python",
+		"ms-azuretools.vscode-docker",
+		"mhutchie.git-graph",
+		"donjayamanne.githistory",
+		"eamodio.gitlens",
+		"MS-CEINTL.vscode-language-pack-ja"
+	]
+}
