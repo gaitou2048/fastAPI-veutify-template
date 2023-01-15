@@ -1,6 +1,6 @@
 version: '3'
 services:
-  # バックエンド(Fdocker astAPI)
+  # バックエンド(docker FastAPI)
   back:
     build:
       context: ./back
