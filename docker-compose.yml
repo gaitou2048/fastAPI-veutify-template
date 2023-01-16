@@ -6,9 +6,11 @@ services:
       context: ./back
       dockerfile: Dockerfile
     ports:
-      - 5001:5000
+      - 5001:8000
     volumes:
-      - ./back/app:/app/
+      - ${LOCAL_WORKSPACE_FOLDER}/back/app:/app/  # devcontainer用
+      # - ./back/app:app/ # 本番マウント
     tty: true
     restart: on-failure
     working_dir: /app
+    command: uvicorn src.main:app --reload --host 0.0.0.0

@@ -2,6 +2,9 @@
 	"name": "Ubuntu",
 	"dockerComposeFile": "docker-compose.devcontainer.yml",
 	"workspaceFolder": "/workspaces/fastAPI-veutify-template/",
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+	},
 	"service": "app",
 	// 拡張機能
 	"extensions": [
