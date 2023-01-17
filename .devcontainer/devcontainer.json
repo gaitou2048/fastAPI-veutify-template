@@ -13,6 +13,7 @@
 		"mhutchie.git-graph",
 		"donjayamanne.githistory",
 		"eamodio.gitlens",
-		"MS-CEINTL.vscode-language-pack-ja"
+		"MS-CEINTL.vscode-language-pack-ja",
+		"Vue.volar"
 	]
 }

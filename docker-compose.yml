@@ -14,3 +14,22 @@ services:
     restart: on-failure
     working_dir: /app
     command: uvicorn src.main:app --reload --host 0.0.0.0
+
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ${LOCAL_WORKSPACE_FOLDER}/front/app:/app
+      - front_node_modules:/app/node_modules
+    tty: true
+    restart: on-failure
+    working_dir: /app
+    command: yarn dev
+  
+volumes:
+  front_node_modules:
+
+  
