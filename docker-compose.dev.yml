@@ -8,7 +8,7 @@ services:
     ports:
       - 5001:8000
     volumes:
-      - ./back/app:/app/  # devcontainer用
+      - ${LOCAL_WORKSPACE_FOLDER}/back/app:/app/  # devcontainer用
       # - ./back/app:app/ # 本番マウント
     tty: true
     restart: on-failure
@@ -22,7 +22,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./front/app:/app
+      - ${LOCAL_WORKSPACE_FOLDER}/front/app:/app
       - front_node_modules:/app/node_modules
     tty: true
     restart: on-failure
@@ -36,10 +36,10 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./server/nginx.conf:/etc/nginx/nginx.conf
-      - ./server/conf.d:/etc/nginx/conf.d
-      - ./server/log:/var/log/nginx
-      - ./front/app/dist:/www/dist
+      - ${LOCAL_WORKSPACE_FOLDER}/server/nginx.conf:/etc/nginx/nginx.conf
+      - ${LOCAL_WORKSPACE_FOLDER}/server/conf.d:/etc/nginx/conf.d
+      - ${LOCAL_WORKSPACE_FOLDER}/server/log:/var/log/nginx
+      - ${LOCAL_WORKSPACE_FOLDER}/front/app/dist:/www/dist
     tty: true
     restart: on-failure
 
