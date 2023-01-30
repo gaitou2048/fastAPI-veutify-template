@@ -10,19 +10,6 @@
         <v-icon>mdi-triangle</v-icon>
       </v-system-bar>
   
-      <v-app-bar>
-        <v-app-bar-nav-icon @click="drawer != null"></v-app-bar-nav-icon>
-  
-        <v-toolbar-title>Application</v-toolbar-title>
-      </v-app-bar>
-  
-      <v-navigation-drawer
-        v-model="drawer"
-        temporary
-      >
-        <!--  -->
-      </v-navigation-drawer>
-  
       <v-main class="bg-grey-lighten-2">
         <v-container>
           <v-row>
@@ -50,5 +37,5 @@
   </template>
   
   <script lang="ts" setup>
-    const drawer = null;
+    
   </script>
