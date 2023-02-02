@@ -5,29 +5,24 @@ services:
     build:
       context: ./back
       dockerfile: Dockerfile
-    ports:
-      - 5001:8000
     volumes:
       - ./back/app:/app/  # devcontainer用
       # - ./back/app:app/ # 本番マウント
     tty: true
     restart: on-failure
     working_dir: /app
-    command: uvicorn src.main:app --reload --host 0.0.0.0
+    command: uvicorn src.main:app --reload --host 0.0.0.0 --port 5001
 
   front:
     build:
       context: ./front
       dockerfile: Dockerfile
-    ports:
-      - 3000:3000
     volumes:
       - ./front/app:/app
       - front_node_modules:/app/node_modules
     tty: true
     restart: on-failure
     working_dir: /app
-    command: yarn dev
 
   server:
     build:

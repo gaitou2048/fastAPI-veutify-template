@@ -33,11 +33,12 @@
 import { onMounted, ref } from 'vue'
 import axios, { AxiosResponse } from 'axios'
 
-const message = ref("文字列");
+const message: ref = ref("文字列");
 onMounted(() => {
-  axios.get('/api').then((res : AxiosResponse) => {
-    message.value = res.data.message;
-  });
+  axios.get('/api')
+    .then((res: AxiosResponse) => {
+      message.value = res.data.message;
+    });
 });
 
 
