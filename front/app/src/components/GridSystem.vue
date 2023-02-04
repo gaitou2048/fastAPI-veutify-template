@@ -30,10 +30,10 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, Ref } from 'vue'
 import axios, { AxiosResponse } from 'axios'
 
-const message: ref = ref("文字列");
+const message: Ref<string> = ref("文字列");
 onMounted(() => {
   axios.get('/api')
     .then((res: AxiosResponse) => {
